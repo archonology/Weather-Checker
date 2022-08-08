@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    background-color: cadetblue;
+}
+
+main {
+    margin-top: 1em;
+
+}
+
+#searchCities {
+    float: left;
+    height: 800px;
+    width: 350px;
+    background-color: rgb(250, 207, 52);
+    margin: 1em;
+    margin-left: 2em;
+    padding: 1em;
+    text-align: center;
+    border-radius: 8px;
+}
+
+input {
+    width: 275px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.button {
+    background-color: rgb(76, 81, 95);
+    color: white;
+    padding: 8px;
+    margin: 1em;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.resultCity {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 8px;
+    margin: 1em;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em;
+    border-radius: 8px;
+}
+
+#featuredCity {
+    flex-shrink: 3;
+    background-color: azure;
+    margin: 1em;
+    padding: 1em;
+    min-height: 415px;
+    border-radius: 8px;
+}
+
+.forcast {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#fiveDayForcast {
+    flex-shrink: 3;
+    background-color: azure;
+    margin: 1.3em;
+    padding: 1.3em;
+    border-radius: 8px;
+    min-height: 325px;
+}
+
+.day {
+    flex-shrink: 3;
+    margin: 1em;
+    background-color: rgb(246, 109, 5);
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.button:hover {
+    background-color: rgb(48, 51, 60);;
+}
+
+.resultCity:hover {
+    background-color: rgb(37, 64, 117);
+}
+
+.day:hover {
+    background-color: rgb(37, 64, 117);
+}
+
+@media screen and (max-width: 912px){
+    #searchCities {
+        min-width: 750px;
+        margin: 2em;
+    }
+    #featuredCity {
+        min-width: 750px;
+        margin-left: 0;
+    }
+    #fiveDayForcast {
+        min-width: 750px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #searchCities {
+        min-width: 350px;
+        margin: 1em;
+    }
+    #featuredCity {
+        min-width: 330px;
+        margin-left: 0;
+    }
+    #fiveDayForcast {
+        min-width: 330px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #searchCities {
+        min-width: 300px;
+        margin: 1em;
+    }
+    #featuredCity {
+        min-width: 300px;
+        margin-left: 0;
+    }
+    #fiveDayForcast {
+        min-width: 300px;
+        margin-left: 0;
+    }
+}
