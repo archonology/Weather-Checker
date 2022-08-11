@@ -15,10 +15,11 @@
 </header>
 <main>
     <aside id="searchCities">
-        <h2>Search for a City:</h2>
+        <form id="user-form">
+            <label for="city-search-input">Search for a City:</label>
         <!--How to have the sample text inside the input box?-->
-        <input type="text" id="citySearcher" placeholder="  San Diego">
-        <p class="button topSearch" id="topSearch">Search</p>
+        <input type="text" id="city-search-input" placeholder="  San Diego, CA, USA">
+        <button type="submit" class="btn" id="btn">Search</button>
         <!--Below are stand in buttons, to be populated upon search history-->
         <!-- <p class="resultCity" id="resultCity1">Atlanta</p>
         <p class="resultCity" id="resultCity2">New York</p>
@@ -28,57 +29,60 @@
         <p class="resultCity" id="resultCity6">Denver</p>
         <p class="resultCity" id="resultCity7">Sand Francisco</p>
         <p class="resultCity" id="resultCity8">Washington DC</p>   -->
+        </form>
     </aside>
-    <section class="container my-2">
-        <div id="featuredCity">
-            <h2>City Weather Results</h2>
-            <p>Temp: 75</p>
-            <p>Wind: 3 MPH</p>
-            <p>Humidity: 46%</p>
+    <section class="container">
+        <div id="featuredCityCard">
+            <h1 id="displayCity">City Weather Results</h1>
+            <p id="temp">Temp: 75</p>
+            <p id="wind">Wind: 3 MPH</p>
+            <p id="humidity">Humidity: 46%</p>
             <!--THe UV index needs to be in a box that is responsive in color to the safety level-->
-            <p>UV Index:</p>
+            <p id="conditions">Conditions: Raining</p>
         </div>
         <div class="forecast bg-dark text-light" id="fiveDayForcast">
             <h3>5-Day Forecast:</h3>
             <div class="row">
-                <div class="day col-12 col-md-6 col-lg-2">
-                    <h4>8/9/2022</h4>
-                    <img src="" alt="">
-                    <p>Temp: 75</p>
-                    <p>Wind: 3 MPH</p>
-                    <p>Humidity: 46%</p>
+                <div class="day col-12 col-md-6 col-lg-2" >
+                    <h4 id="forecast1">8/9/2022</h4>
+                    <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="">
+                    <p id="forTemp1">Temp: 75</p>
+                    <p id="forWind1">Wind: 3 MPH</p>
+                    <p id="forHumid1">Humidity: 46%</p>
                 </div>
                 <div class="day col-12 col-md-6 col-lg-2">
-                    <h4>8/10/2022</h4>
-                    <img src="" alt="">
-                    <p>Temp: 75</p>
-                    <p>Wind: 3 MPH</p>
-                    <p>Humidity: 46%</p>
+                    <h4 id="forecast2">8/10/2022</h4>
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <p id="forTemp2">Temp: 75</p>
+                    <p id="forWind2">Wind: 3 MPH</p>
+                    <p id="forHumid2">Humidity: 46%</p>
                 </div>
                 <div class="day col-12 col-md-6 col-lg-2">
-                    <h4>8/11/2022</h4>
-                    <img src="" alt="">
-                    <p>Temp: 75</p>
-                    <p>Wind: 3 MPH</p>
-                    <p>Humidity: 46%</p>
+                    <h4 id="forecast3">8/11/2022</h4>
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <p id="forTemp3">Temp: 75</p>
+                    <p id="forWind3">Wind: 3 MPH</p>
+                    <p id="forHumid3">Humidity: 46%</p>
                 </div>
                 <div class="day col-12 col-md-6 col-lg-2">
-                    <h4>8/12/2022</h4>
-                    <img src="" alt="">
-                    <p>Temp: 75</p>
-                    <p>Wind: 3 MPH</p>
-                    <p>Humidity: 46%</p>
+                    <h4 id="forecast4">8/12/2022</h4>
+                    <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="">
+                    <p id="forTemp4">Temp: 75</p>
+                    <p id="forWind4">Wind: 3 MPH</p>
+                    <p id="forHumid4">Humidity: 46%</p>
                 </div>
                 <div class="day col-12 col-md-6 col-lg-2">
-                    <h4>8/13/2022</h4>
-                    <img src="" alt="">
-                    <p>Temp: 75</p>
-                    <p>Wind: 3 MPH</p>
-                    <p>Humidity: 46%</p>
+                    <h4 id="forecast5">8/13/2022</h4>
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <p id="forTemp5">Temp: 75</p>
+                    <p id="forWind5">Wind: 3 MPH</p>
+                    <p id="forHumid5">Humidity: 46%</p>
                 </div>
         </div>
     </section>
 </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
    <script src="./assests/Scripts/script.js"></script>
 </body>
 </html>
