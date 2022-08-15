@@ -14,7 +14,6 @@ var citySearchInputEl = document.querySelector("#city-search-input");
 var cityHistoryBtns = document.querySelector("#city-history");
 var featuredCityCard = document.querySelector("#featuredCityCard");
 var userFormEl = document.querySelector("#user-form");
-// var conditionsURL = "https://openweathermap.org/img/wn/" + cityCond + "@2x.png"
 
 var searchHistory = [];
 
