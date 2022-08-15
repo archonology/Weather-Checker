@@ -22,7 +22,6 @@ var formSubmitHandler = function (event) {
   event.preventDefault();
 
   var cityWeather = citySearchInputEl.value.trim();
-  console.log(cityWeather);
   //variable for the API
   var queryURL =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -120,7 +119,6 @@ var formSubmitHandler = function (event) {
             //add new city to the city array
             searchHistory.push(cityWeather);
             
-            //how do I clear the input?
 
             //store updates 
             storedCities();
@@ -141,7 +139,6 @@ function renderSearchHistory() {
   //render a new line for each search
   for (var i = 0; i < searchHistory.length; i++) {
     var city = searchHistory[i];
-    console.log(searchHistory);
     var lastCity = document.createElement("p");
     lastCity.innerHTML = city;
     lastCity.className = "resultCity";
@@ -152,14 +149,11 @@ function renderSearchHistory() {
       container.appendChild(lastCity);
 
     //set up the click event
-    lastCity.onclick = function(){
-
-        //this for loop needs work! Almost there!
-        //
-        //
-        for (var i = 0; i < searchHistory.length; i++) {
-            var city = searchHistory[i];
-            
+    lastCity.onclick = function(event){
+      console.log(event)
+      //get the city info for the history buttons
+      city = event.target.textContent
+      
     //now do the fetch for each search history on the click
             var historyURL =
             "https://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -266,7 +260,7 @@ function renderSearchHistory() {
         };
     }
   }
-}
+
 
 function init() {
   //get stored cities from localStorage
