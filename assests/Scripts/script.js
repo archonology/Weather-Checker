@@ -45,7 +45,6 @@ var formSubmitHandler = function (event) {
       .then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
-            console.log(data);
 
             //apply data to the current weather card
             displayCity.text(data.city.name);
@@ -129,7 +128,7 @@ var formSubmitHandler = function (event) {
           });
         } else {
           alert(
-            "Error: check spelling or input format(City name only or City, State initials, USA)"
+            "Error: check spelling or input format: \n City name ONLY or City, State, USA"
           );
         }
       })
@@ -144,24 +143,24 @@ function renderSearchHistory() {
   for (var i = 0; i < searchHistory.length; i++) {
     var city = searchHistory[i];
     console.log(searchHistory);
-    var btn = document.createElement("p");
-    btn.innerHTML = city;
-    btn.className = "resultCity";
-    btn.id = "resultCity";
+    var lastCity = document.createElement("p");
+    lastCity.innerHTML = city;
+    lastCity.className = "resultCity";
+    lastCity.id = "resultCity";
 
-      //where to put the buttons
+      //where the history goes in the html
       var container = document.getElementById("user-form");
-      container.appendChild(btn);
-    //   btn.setAttribute("data-index", i);
+      container.appendChild(lastCity);
 
     //set up the click event
-    btn.onclick = function(){
+    lastCity.onclick = function(){
 
         //this for loop needs work! Almost there!
         //
         //
         for (var i = 0; i < searchHistory.length; i++) {
             var city = searchHistory[i];
+            
     //now do the fetch for each search history on the click
             var historyURL =
             "http://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -183,8 +182,7 @@ function renderSearchHistory() {
               .then(function (response) {
                 if (response.ok) {
                   response.json().then(function (data) {
-                    console.log(data);
-                    console.log(data.list[0].weather[0].icon);
+        
                     //apply data to the current weather card
                     displayCity.text(data.city.name);
                     temp.text("Current Temp: " + data.list[0].main.temp + " F");

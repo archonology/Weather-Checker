@@ -1,146 +1,143 @@
 body {
-    margin: 0;
-    background-color: rgb(1, 116, 139);
+  margin: 0;
+  background-color: rgb(1, 116, 139);
 }
 
 main {
-    margin-top: 1em;
-
+  margin-top: 1em;
 }
 
 #searchCities {
-    float: left;
-    width: 350px;
-    height: auto;
-    background-color: rgb(250, 207, 52);
-    margin: 1em;
-    margin-left: 2em;
-    padding: 1em;
-    text-align: center;
-    border-radius: 8px;
+  float: left;
+  width: 350px;
+  height: auto;
+  background-color: rgb(250, 207, 52);
+  margin: 1em;
+  margin-left: 2em;
+  padding: 1em;
+  text-align: center;
+  border-radius: 8px;
 }
 
 input {
-    width: 275px;
-    height: 40px;
-    border-radius: 8px;
-    margin: 5px;
+  width: 275px;
+  height: 40px;
+  border-radius: 8px;
+  margin: 5px;
 }
 
 .btn {
-    background-color: rgb(76, 81, 95);
-    color: white;
-    width: 250px;
-    padding: 8px;
-    margin: 1em;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
+  background-color: rgb(76, 81, 95);
+  color: white;
+  width: 250px;
+  padding: 8px;
+  margin: 1em;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .resultCity {
-    background-color: rgb(48, 51, 60);
-    color: white;
-    padding: 8px;
-    margin: 1em;
-    border-radius: 8px;
-    text-align: center;
+  background-color: rgb(48, 51, 60);
+  color: white;
+  padding: 8px;
+  margin: 1em;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
-    border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  border-radius: 8px;
+  justify-content: center;
 }
 
 #featuredCityCard {
-    background-color: rgb(203, 213, 213);
-    margin: 1em;
-    padding: 1em;
-    max-width: 600px;
-    border-radius: 8px;
+  background-color: rgb(203, 213, 213);
+  /* margin: 1em; */
+  padding: 1em;
+  max-width: 400px;
+  border-radius: 8px;
 }
 
 #featuredImage {
-    float: right;
+  float: right;
 }
 
 .forcast {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #fiveDayForcast {
-    flex-shrink: 1;
-    margin: 1.3em;
-    padding: 1.3em;
-    border-radius: 8px;
+  flex-shrink: 1;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 8px;
 }
 
 .day {
-    flex-shrink: 3;
-    margin: 1em;
-    background-color: rgb(195, 82, 59);
-    padding: 1em;
-    border-radius: 8px;
+  flex-shrink: 3;
+  margin: 1em;
+  background-color: rgb(195, 82, 59);
+  padding: 1em;
+  border-radius: 8px;
+}
+
+footer {
+    margin-top: 15%;
+    text-align: center;
 }
 
 .btn:hover {
-    background-color: rgb(48, 51, 60);;
-    color: white;
+  background-color: rgb(48, 51, 60);
+  color: white;
 }
 
 .resultCity:hover {
-    background-color: rgb(14, 14, 15);;
+  background-color: rgb(14, 14, 15);
 }
 
 .day:hover {
-    background-color: rgb(71, 134, 139);
+  background-color: rgb(71, 134, 139);
 }
 
-@media screen and (max-width: 912px){
-    #searchCities {
-        /* min-width: 750px; */
-        margin: 2em;
-    }
-    #featuredCity {
-        max-width: 400px;
-        margin-left: 0;
-    }
-    #fiveDayForcast {
-        max-width: 400px;
-        margin-left: 0;
-    }
+@media screen and (max-width: 768px) {
+  #searchCities {
+    /* min-width: 750px; */
+    width: 500px;
+  }
+  #featuredCityCard {
+    max-width: 500px;
+    width: 500px;
+  }
+  #fiveDayForcast {
+    width: 500px;
+  }
 }
 
-@media screen and (max-width: 600px){
-    #searchCities {
-        /* min-width: 350px; */
-        margin: 1em;
-    }
-    #featuredCity {
-        /* min-width: 330px; */
-        margin-left: 0;
-    }
-    #fiveDayForcast {
-        /* min-width: 330px; */
-        margin-left: 0;
-    }
-}
+@media screen and (max-width: 425px) {
+  #searchCities {
+    /* min-width: 750px; */
+    width: 300px;
+  }
 
-@media screen and (max-width: 400px){
-    #searchCities {
-        /* min-width: 300px; */
-        margin: 1em;
-    }
-    #featuredCity {
-        /* min-width: 300px; */
-        margin-left: 0;
-    }
-    #fiveDayForcast {
-        /* min-width: 300px; */
-        margin-left: 0;
-    }
+  input {
+    width: 200px;
+  }
+
+  .btn {
+    width: 200px;
+  }
+
+  #featuredCityCard {
+    max-width: 300px;
+    width: 300px;
+  }
+  #fiveDayForcast {
+    width: 300px;
+  }
 }
