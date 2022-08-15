@@ -23,5 +23,5 @@ The challenge was to make a site for checking weather around the world. Recent s
  ---------------------
 
  ### Image of Deployed Site:
-<img src="./assests/images/Screen Shot 2022-08-15 at 11.00.24 AM.png" alt="screenshot of deployed site">
+<img src="./assests/images/Screen Shot 2022-08-15 at 11.31.57 AM.png" alt="deployed site">
 
