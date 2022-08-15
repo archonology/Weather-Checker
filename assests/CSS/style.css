@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: cadetblue;
+    background-color: rgb(1, 116, 139);
 }
 
 main {
@@ -30,6 +30,7 @@ input {
 .btn {
     background-color: rgb(76, 81, 95);
     color: white;
+    width: 250px;
     padding: 8px;
     margin: 1em;
     border-radius: 8px;
@@ -38,7 +39,7 @@ input {
 }
 
 .resultCity {
-    background-color: rgb(19, 91, 120);
+    background-color: rgb(48, 51, 60);
     color: white;
     padding: 8px;
     margin: 1em;
@@ -54,11 +55,15 @@ input {
 }
 
 #featuredCityCard {
-    background-color: azure;
+    background-color: rgb(203, 213, 213);
     margin: 1em;
     padding: 1em;
     max-width: 600px;
     border-radius: 8px;
+}
+
+#featuredImage {
+    float: right;
 }
 
 .forcast {
@@ -69,7 +74,6 @@ input {
 
 #fiveDayForcast {
     flex-shrink: 1;
-    background-color: azure;
     margin: 1.3em;
     padding: 1.3em;
     border-radius: 8px;
@@ -78,21 +82,22 @@ input {
 .day {
     flex-shrink: 3;
     margin: 1em;
-    background-color: rgb(29, 139, 183);
+    background-color: rgb(195, 82, 59);
     padding: 1em;
     border-radius: 8px;
 }
 
 .btn:hover {
     background-color: rgb(48, 51, 60);;
+    color: white;
 }
 
 .resultCity:hover {
-    background-color: rgb(37, 64, 117);
+    background-color: rgb(14, 14, 15);;
 }
 
 .day:hover {
-    background-color: rgb(71, 173, 214);
+    background-color: rgb(71, 134, 139);
 }
 
 @media screen and (max-width: 912px){
