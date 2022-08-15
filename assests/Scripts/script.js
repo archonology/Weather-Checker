@@ -26,7 +26,7 @@ var formSubmitHandler = function (event) {
   console.log(cityWeather);
   //variable for the API
   var queryURL =
-    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     cityWeather +
     "&cnt=6&appid=" +
     APIKey +
@@ -163,7 +163,7 @@ function renderSearchHistory() {
             
     //now do the fetch for each search history on the click
             var historyURL =
-            "http://api.openweathermap.org/data/2.5/forecast?q=" +
+            "https://api.openweathermap.org/data/2.5/forecast?q=" +
             city +
             "&cnt=6&appid=" +
             APIKey +
