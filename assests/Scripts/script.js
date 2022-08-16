@@ -150,7 +150,6 @@ function renderSearchHistory() {
 
     //set up the click event
     lastCity.onclick = function(event){
-      console.log(event)
       //get the city info for the history buttons
       city = event.target.textContent
       
@@ -162,7 +161,7 @@ function renderSearchHistory() {
             APIKey +
             //imperial units sets to degrees F and MPH
             "&units=imperial";
-        console.log(city)
+
           //upcoming days via moment.js
           $("#forecast1").text(moment().add(1, "day").format("MM/DD/YYYY"));
           $("#forecast2").text(moment().add(2, "day").format("MM/DD/YYYY"));
