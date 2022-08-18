@@ -32,11 +32,11 @@ var formSubmitHandler = function (event) {
     "&units=imperial";
 
   //upcoming days via moment.js
-  $("#forecast1").text(moment().add(1, "day").format("MM/DD/YYYY"));
-  $("#forecast2").text(moment().add(2, "day").format("MM/DD/YYYY"));
-  $("#forecast3").text(moment().add(3, "day").format("MM/DD/YYYY"));
-  $("#forecast4").text(moment().add(4, "day").format("MM/DD/YYYY"));
-  $("#forecast5").text(moment().add(5, "day").format("MM/DD/YYYY"));
+  $("#forecast1").text(moment().add(1, "day").format("M/DD/YYYY"));
+  $("#forecast2").text(moment().add(2, "day").format("M/DD/YYYY"));
+  $("#forecast3").text(moment().add(3, "day").format("M/DD/YYYY"));
+  $("#forecast4").text(moment().add(4, "day").format("M/DD/YYYY"));
+  $("#forecast5").text(moment().add(5, "day").format("M/DD/YYYY"));
 
   if (cityWeather) {
     fetch(queryURL)
@@ -45,7 +45,7 @@ var formSubmitHandler = function (event) {
           response.json().then(function (data) {
 
             //apply data to the current weather card
-            displayCity.text(data.city.name);
+            displayCity.text(data.city.name + " on " + (moment().format("M/DD/YYYY")));
             temp.text("Current Temp: " + data.list[0].main.temp + " F");
             wind.text("Wind: " + data.list[0].wind.speed + " mph");
             humidity.text("Humidity: " + data.list[0].main.humidity + "%");
@@ -163,11 +163,11 @@ function renderSearchHistory() {
             "&units=imperial";
 
           //upcoming days via moment.js
-          $("#forecast1").text(moment().add(1, "day").format("MM/DD/YYYY"));
-          $("#forecast2").text(moment().add(2, "day").format("MM/DD/YYYY"));
-          $("#forecast3").text(moment().add(3, "day").format("MM/DD/YYYY"));
-          $("#forecast4").text(moment().add(4, "day").format("MM/DD/YYYY"));
-          $("#forecast5").text(moment().add(5, "day").format("MM/DD/YYYY"));
+          $("#forecast1").text(moment().add(1, "day").format("M/DD/YYYY"));
+          $("#forecast2").text(moment().add(2, "day").format("M/DD/YYYY"));
+          $("#forecast3").text(moment().add(3, "day").format("M/DD/YYYY"));
+          $("#forecast4").text(moment().add(4, "day").format("M/DD/YYYY"));
+          $("#forecast5").text(moment().add(5, "day").format("M/DD/YYYY"));
         
           if (city) {
             fetch(historyURL)
@@ -176,7 +176,7 @@ function renderSearchHistory() {
                   response.json().then(function (data) {
         
                     //apply data to the current weather card
-                    displayCity.text(data.city.name);
+                    displayCity.text(data.city.name + " on " + (moment().format("M/DD/YYYY")));
                     temp.text("Current Temp: " + data.list[0].main.temp + " F");
                     wind.text("Wind: " + data.list[0].wind.speed + " mph");
                     humidity.text("Humidity: " + data.list[0].main.humidity + "%");
