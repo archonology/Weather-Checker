@@ -32,11 +32,9 @@ var formSubmitHandler = function (event) {
     "&units=imperial";
 
   //upcoming days via moment.js
-  $("#forecast1").text(moment().add(1, "day").format("M/DD/YYYY"));
-  $("#forecast2").text(moment().add(2, "day").format("M/DD/YYYY"));
-  $("#forecast3").text(moment().add(3, "day").format("M/DD/YYYY"));
-  $("#forecast4").text(moment().add(4, "day").format("M/DD/YYYY"));
-  $("#forecast5").text(moment().add(5, "day").format("M/DD/YYYY"));
+  for(var index = 1; index < 6; index++){
+    $(`#forecast${index}`).text(moment().add(index, "day").format("M/DD/YYYY"));
+  }
 
   if (cityWeather) {
     fetch(queryURL)
@@ -44,17 +42,17 @@ var formSubmitHandler = function (event) {
         if (response.ok) {
           response.json().then(function (data) {
 
-            //apply data to the current weather card
+            //apply data to the current weather card -- utilizing jquery form and standard
             displayCity.text(data.city.name + " on " + (moment().format("M/DD/YYYY")));
-            temp.text("Current Temp: " + data.list[0].main.temp + " F");
-            wind.text("Wind: " + data.list[0].wind.speed + " mph");
-            humidity.text("Humidity: " + data.list[0].main.humidity + "%");
+            temp.text(`CurrentTemp:${data.list[0].main.temp}`) + " F";
+            wind.text(`Wind:${data.list[0].wind.speed}`)+ " mph"; 
+            humidity.text(`Humidity:${data.list[0].main.humidity}`) + "%"; 
             conditions.text(
               "Conditions: " + data.list[0].weather[0].description
             );
             $("#featuredImage").html(
                 "<img src='https://openweathermap.org/img/wn/" +
-                  data.list[0].weather[0].icon +
+                  data.list[0].weather[0].icon + 
                   "@2x.png'>"
               );
 
@@ -65,7 +63,7 @@ var formSubmitHandler = function (event) {
                 "@2x.png'>"
             );
             $("#forecast1").text(data.list[1].timezone);
-            $("#forTemp1").text("Temp: " + data.list[1].main.temp);
+            $("#forTemp1").text(`Temp:${data.list[1].main.temp}`) + " F";
             $("#forWind1").text("Wind: " + data.list[1].wind.speed + " mph");
             $("#forHumid1").text(
               "Humidity: " + data.list[1].main.humidity + "%"
@@ -76,7 +74,7 @@ var formSubmitHandler = function (event) {
                 data.list[2].weather[0].icon +
                 "@2x.png'>"
             );
-            $("#forTemp2").text("Temp: " + data.list[2].main.temp);
+            $("#forTemp2").text("Temp: " + data.list[2].main.temp + " F");
             $("#forWind2").text("Wind: " + data.list[2].wind.speed + " mph");
             $("#forHumid2").text(
               "Humidity: " + data.list[2].main.humidity + "%"
@@ -87,7 +85,7 @@ var formSubmitHandler = function (event) {
                 data.list[3].weather[0].icon +
                 "@2x.png'>"
             );
-            $("#forTemp3").text("Temp: " + data.list[3].main.temp);
+            $("#forTemp3").text("Temp: " + data.list[3].main.temp + " F");
             $("#forWind3").text("Wind: " + data.list[3].wind.speed + " mph");
             $("#forHumid3").text(
               "Humidity: " + data.list[3].main.humidity + "%"
@@ -98,7 +96,7 @@ var formSubmitHandler = function (event) {
                 data.list[4].weather[0].icon +
                 "@2x.png'>"
             );
-            $("#forTemp4").text("Temp: " + data.list[4].main.temp);
+            $("#forTemp4").text("Temp: " + data.list[4].main.temp + " F");
             $("#forWind4").text("Wind: " + data.list[4].wind.speed + " mph");
             $("#forHumid4").text(
               "Humidity: " + data.list[4].main.humidity + "%"
@@ -109,19 +107,20 @@ var formSubmitHandler = function (event) {
                 data.list[5].weather[0].icon +
                 "@2x.png'>"
             );
-            $("#forTemp5").text("Temp: " + data.list[5].main.temp);
+            $("#forTemp5").text("Temp: " + data.list[5].main.temp + " F");
             $("#forWind5").text("Wind: " + data.list[5].wind.speed + " mph");
             $("#forHumid5").text(
               "Humidity: " + data.list[5].main.humidity + "%"
             );
-
+    
             localStorage.setItem("city", cityWeather);
             //add new city to the city array
-            searchHistory.push(cityWeather);
+            searchHistory.unshift(cityWeather);
             
 
             //store updates 
             storedCities();
+            addNewCityButton();
           });
         } else {
           alert(
@@ -134,6 +133,119 @@ var formSubmitHandler = function (event) {
       });
   }
 };
+
+function addNewCityButton() {
+  var city = searchHistory[0];
+  var lastCity = document.createElement("p");
+  lastCity.innerHTML = city;
+  lastCity.className = "resultCity";
+  lastCity.id = "resultCity";
+
+    //where the history goes in the html
+    var container = document.getElementById("user-form");
+    container.appendChild(lastCity);
+
+  //set up the click event
+  lastCity.onclick = function(event){
+    //get the city info for the history buttons
+    city = event.target.textContent
+    
+  //now do the fetch for each search history on the click
+          var historyURL =
+          "https://api.openweathermap.org/data/2.5/forecast?q=" +
+          city +
+          "&cnt=6&appid=" +
+          APIKey +
+          //imperial units sets to degrees F and MPH
+          "&units=imperial";
+
+        //upcoming days via moment.js
+        for(var index = 1; index < 6; index++){
+          $(`#forecast${index}`).text(moment().add(index, "day").format("M/DD/YYYY"));
+        }
+      
+        if (city) {
+          fetch(historyURL)
+            .then(function (response) {
+              if (response.ok) {
+                response.json().then(function (data) {
+      
+                  //apply data to the current weather card
+                  displayCity.text(data.city.name + " on " + (moment().format("M/DD/YYYY")));
+                  temp.text("Current Temp: " + data.list[0].main.temp + " F");
+                  wind.text("Wind: " + data.list[0].wind.speed + " mph");
+                  humidity.text("Humidity: " + data.list[0].main.humidity + "%");
+                  conditions.text(
+                    "Conditions: " + data.list[0].weather[0].description
+                  );
+                  $("#featuredImage").html(
+                      "<img src='https://openweathermap.org/img/wn/" +
+                        data.list[0].weather[0].icon +
+                        "@2x.png'>"
+                    );
+      
+                  //apply data to the forecast cards
+                  $("#image1").html(
+                    "<img src='https://openweathermap.org/img/wn/" +
+                      data.list[1].weather[0].icon +
+                      "@2x.png'>"
+                  );
+                  $("#forecast1").text(data.list[1].timezone);
+                  $("#forTemp1").text("Temp: " + data.list[1].main.temp);
+                  $("#forWind1").text("Wind: " + data.list[1].wind.speed + " mph");
+                  $("#forHumid1").text(
+                    "Humidity: " + data.list[1].main.humidity + "%"
+                  );
+      
+                  $("#image2").html(
+                    "<img src='https://openweathermap.org/img/wn/" +
+                      data.list[2].weather[0].icon +
+                      "@2x.png'>"
+                  );
+                  $("#forTemp2").text("Temp: " + data.list[2].main.temp);
+                  $("#forWind2").text("Wind: " + data.list[2].wind.speed + " mph");
+                  $("#forHumid2").text(
+                    "Humidity: " + data.list[2].main.humidity + "%"
+                  );
+      
+                  $("#image3").html(
+                    "<img src='https://openweathermap.org/img/wn/" +
+                      data.list[3].weather[0].icon +
+                      "@2x.png'>"
+                  );
+                  $("#forTemp3").text("Temp: " + data.list[3].main.temp);
+                  $("#forWind3").text("Wind: " + data.list[3].wind.speed + " mph");
+                  $("#forHumid3").text(
+                    "Humidity: " + data.list[3].main.humidity + "%"
+                  );
+      
+                  $("#image4").html(
+                    "<img src='https://openweathermap.org/img/wn/" +
+                      data.list[4].weather[0].icon +
+                      "@2x.png'>"
+                  );
+                  $("#forTemp4").text("Temp: " + data.list[4].main.temp);
+                  $("#forWind4").text("Wind: " + data.list[4].wind.speed + " mph");
+                  $("#forHumid4").text(
+                    "Humidity: " + data.list[4].main.humidity + "%"
+                  );
+      
+                  $("#image5").html(
+                    "<img src='https://openweathermap.org/img/wn/" +
+                      data.list[5].weather[0].icon +
+                      "@2x.png'>"
+                  );
+                  $("#forTemp5").text("Temp: " + data.list[5].main.temp);
+                  $("#forWind5").text("Wind: " + data.list[5].wind.speed + " mph");
+                  $("#forHumid5").text(
+                    "Humidity: " + data.list[5].main.humidity + "%"
+                );
+                });
+              };
+          });
+        }
+      }
+    }
 //to create the buttons for past city searches
 function renderSearchHistory() {
   //render a new line for each search
@@ -163,11 +275,9 @@ function renderSearchHistory() {
             "&units=imperial";
 
           //upcoming days via moment.js
-          $("#forecast1").text(moment().add(1, "day").format("M/DD/YYYY"));
-          $("#forecast2").text(moment().add(2, "day").format("M/DD/YYYY"));
-          $("#forecast3").text(moment().add(3, "day").format("M/DD/YYYY"));
-          $("#forecast4").text(moment().add(4, "day").format("M/DD/YYYY"));
-          $("#forecast5").text(moment().add(5, "day").format("M/DD/YYYY"));
+          for(var index = 1; index < 6; index++){
+            $(`#forecast${index}`).text(moment().add(index, "day").format("M/DD/YYYY"));
+          }
         
           if (city) {
             fetch(historyURL)
