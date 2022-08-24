@@ -44,15 +44,15 @@ var formSubmitHandler = function (event) {
 
             //apply data to the current weather card -- utilizing jquery form and standard
             displayCity.text(data.city.name + "(" + (moment().format("M/DD/YYYY")) + ")");
-            temp.text(`CurrentTemp:${data.list[0].main.temp}`) + " °F";
-            wind.text(`Wind:${data.list[0].wind.speed}`)+ " mph"; 
-            humidity.text(`Humidity: ${data.list[0].main.humidity}` + "%"); 
+            temp.text("Current Temp: " + data.list[0].main.temp + " °F");
+            wind.text("Wind: " + data.list[0].wind.speed + " mph");
+            humidity.text("Humidity: " + data.list[0].main.humidity + "%");
             conditions.text(
               "Conditions: " + data.list[0].weather[0].description
             );
             $("#featuredImage").html(
                 "<img src='https://openweathermap.org/img/wn/" +
-                  data.list[0].weather[0].icon + 
+                  data.list[0].weather[0].icon +
                   "@2x.png'>"
               );
 
