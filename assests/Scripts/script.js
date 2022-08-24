@@ -148,7 +148,7 @@ function addNewCityButton() {
   //set up the click event
   lastCity.onclick = function(event){
     //get the city info for the history buttons
-    city = event.target.textContent
+    city = event.target.textContent;
     
   //now do the fetch for each search history on the click
           var historyURL =
@@ -379,7 +379,9 @@ function renderSearchHistory() {
       //where the history goes in the html
       var container = document.getElementById("searchCities");
       container.appendChild(lastCity);
-      
+       //set up the click event
+  lastCity.onclick = function(event){
+    city = "Paris";
     //now do the fetch for each search history on the click
             var historyURL =
             "https://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -475,6 +477,7 @@ function renderSearchHistory() {
             });
           }
         }
+      }
   //to create the buttons for past city searches
   function renderSearchHistory() {
     for (var i = 0; i < searchHistory.length; i++) {
