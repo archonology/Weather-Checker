@@ -46,7 +46,7 @@ var formSubmitHandler = function (event) {
             displayCity.text(data.city.name + "(" + (moment().format("M/DD/YYYY")) + ")");
             temp.text(`CurrentTemp:${data.list[0].main.temp}`) + " °F";
             wind.text(`Wind:${data.list[0].wind.speed}`)+ " mph"; 
-            humidity.text(`Humidity:${data.list[0].main.humidity}`) + "%"; 
+            humidity.text(`Humidity: ${data.list[0].main.humidity}` + "%"); 
             conditions.text(
               "Conditions: " + data.list[0].weather[0].description
             );
@@ -63,7 +63,7 @@ var formSubmitHandler = function (event) {
                 "@2x.png'>"
             );
             $("#forecast1").text(data.list[1].timezone);
-            $("#forTemp1").text(`Temp:${data.list[1].main.temp}`) + " °F";
+            $("#forTemp1").text(`Temp:${data.list[1].main.temp}`+ " °F");
             $("#forWind1").text("Wind: " + data.list[1].wind.speed + " mph");
             $("#forHumid1").text(
               "Humidity: " + data.list[1].main.humidity + "%"
