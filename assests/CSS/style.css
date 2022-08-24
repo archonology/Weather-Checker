@@ -1,143 +1,120 @@
 body {
   margin: 0;
-  background-color: rgb(1, 116, 139);
+  background-color: rgb(25, 110, 155);
 }
 
-main {
-  margin-top: 1em;
+header {
+  height: 150px;
+  background-color: rgb(33, 52, 59); /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, rgb(71, 178, 214), rgb(20, 55, 80));
 }
+
+header h1 {
+  text-align: center;
+  padding: 1em;
+}
+
 
 #searchCities {
-  float: left;
-  width: 350px;
-  height: auto;
-  background-color: rgb(250, 207, 52);
-  margin: 1em;
-  margin-left: 2em;
-  padding: 1em;
   text-align: center;
-  border-radius: 8px;
+  float: left;
+  width: 20%;
+  margin-left: 3em;
+}
+#user-form {
+  border-bottom: 2px solid black;
+}
+
+form h1 {
+  font-size: 42px;
+  text-align: left;
+  font-weight: bolder;
+  color: white
 }
 
 input {
-  width: 275px;
-  height: 40px;
+  width: 100%;
+  height: 75px;
   border-radius: 8px;
-  margin: 5px;
+  /* margin: 5px; */
+}
+#city-search-input {
+font-size: 28px;
 }
 
 .btn {
-  background-color: rgb(76, 81, 95);
+  background-color: rgb(6, 89, 148);
   color: white;
-  width: 250px;
+  width: 100%;
+  height: 50px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 8px;
-  margin: 1em;
   border-radius: 8px;
-  text-align: center;
   font-weight: bold;
+  font-size: larger;
 }
 
 .resultCity {
   background-color: rgb(48, 51, 60);
   color: white;
+  height: 50px;
+  font-size: larger;
   padding: 8px;
   margin: 1em;
   border-radius: 8px;
   text-align: center;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1em;
-  border-radius: 8px;
-  justify-content: center;
-}
-
 #featuredCityCard {
   background-color: rgb(203, 213, 213);
-  /* margin: 1em; */
-  padding: 1em;
-  max-width: 400px;
+  background-image: linear-gradient(to bottom right, rgb(45, 95, 144), rgb(55, 194, 215));
+  padding: 3em;
+  width: 73%;
   border-radius: 8px;
+  font-weight: 500;
+}
+#featuredCityCard h1 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+#featuredCityCard p {
+  font-size: larger;
 }
 
 #featuredImage {
   float: right;
+  margin-right: 8em;
 }
 
-.forcast {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
 
 #fiveDayForcast {
-  flex-shrink: 1;
+  width: 73%;
   margin-top: 1em;
-  padding: 1em;
+  padding: 3em;
   border-radius: 8px;
+  background-image: linear-gradient(to bottom right, rgb(26, 57, 84), rgb(104, 171, 248));
 }
 
 .day {
-  flex-shrink: 3;
   margin: 1em;
-  background-color: rgb(195, 82, 59);
   padding: 1em;
   border-radius: 8px;
+  background-color: rgba(46, 64, 80, 0.439);
 }
 
 footer {
-    margin-top: 15%;
+    margin-top: 7%;
     text-align: center;
 }
 
 .btn:hover {
-  background-color: rgb(48, 51, 60);
+  background-color: rgb(251, 188, 61);
   color: white;
 }
 
 .resultCity:hover {
-  background-color: rgb(14, 14, 15);
+  background-color: rgb(195, 82, 59);
 }
 
-.day:hover {
-  background-color: rgb(71, 134, 139);
-}
 
-@media screen and (max-width: 768px) {
-  #searchCities {
-    /* min-width: 750px; */
-    width: 500px;
-  }
-  #featuredCityCard {
-    max-width: 500px;
-    width: 500px;
-  }
-  #fiveDayForcast {
-    width: 500px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  #searchCities {
-    /* min-width: 750px; */
-    width: 300px;
-  }
-
-  input {
-    width: 200px;
-  }
-
-  .btn {
-    width: 200px;
-  }
-
-  #featuredCityCard {
-    max-width: 300px;
-    width: 300px;
-  }
-  #fiveDayForcast {
-    width: 300px;
-  }
-}

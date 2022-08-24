@@ -14,17 +14,16 @@
     <h1>The Savvy Traveler's Weather Dashboard</h1>
 </header>
 <main> 
-    <aside id="searchCities">
+    <section class="container-fluid">
+    <aside class="col-6 col-lg-4" id="searchCities">
         <form id="user-form">
-            <label for="city-search-input">Search for a City:</label>
-        <input type="text" id="city-search-input" placeholder=" San Diego">
-        <button type="submit" class="btn" id="btn">Search</button>
-        <!-- for the past search call buttons -->
-        
-    </form>
+            <h1>Search for a City:</h1> 
+            <label for="city-search-input"></label>
+            <input type="text" id="city-search-input" placeholder=" Paris">
+            <button type="submit" class="btn" id="btn">Search</button>
+        </form>
     </aside>
-    <section class="container">
-        <div id="featuredCityCard">
+        <div class="offset-3 text-light" id="featuredCityCard">
             <h1 id="displayCity">...</h1>
             <div id="featuredImage"></div>
             <p id="temp"></p>
@@ -32,7 +31,7 @@
             <p id="humidity"></p>
             <p id="conditions"></p>
         </div>
-        <div class="forecast bg-dark text-light" id="fiveDayForcast">
+        <div class="forecast text-light offset-3" id="fiveDayForcast">
             <h3>5-Day Forecast:</h3>
             <div class="row">
                 <div class="day col-12 col-md-6 col-lg-2" >
