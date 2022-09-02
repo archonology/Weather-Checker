@@ -15,7 +15,7 @@
 </header>
 <main> 
     <section class="container-fluid">
-    <aside class="col-6 col-lg-4" id="searchCities">
+    <aside class="flex-column col-12 col-lg-3" id="searchCities">
         <form id="user-form">
             <h1>Search for a City:</h1> 
             <label for="city-search-input"></label>
@@ -23,7 +23,7 @@
             <button type="submit" class="btn" id="btn">Search</button>
         </form>
     </aside>
-        <div class="offset-3 text-light" id="featuredCityCard">
+        <div class="d-sm-inline-flex col-sm-10 text-light flex-column justify-content-sm-center" id="featuredCityCard">
             <h1 id="displayCity">...</h1>
             <div id="featuredImage"></div>
             <p id="temp"></p>
@@ -31,38 +31,38 @@
             <p id="humidity"></p>
             <p id="conditions"></p>
         </div>
-        <div class="forecast text-light offset-3" id="fiveDayForcast">
+        <div class="d-sm-inline-flex  d-md-flex flex-column flex-md-row col-12 col-lg-10 forecast text-light justify-content-sm-center justify-content-md-center offset-md-3 offset-lg-3.2" id="fiveDayForcast">
             <h3>5-Day Forecast:</h3>
-            <div class="row">
-                <div class="day col-12 col-md-6 col-lg-2" >
+            <div class="row justify-content-sm-center">
+                <div class="day d-md-inline-flex flex-column" >
                     <h4 id="forecast1"></h4>
                    <div id="image1"></div>
                     <p id="forTemp1"></p>
                     <p id="forWind1"></p>
                     <p id="forHumid1"></p>
                 </div>
-                <div class="day col-12 col-md-6 col-lg-2">
+                <div class="day d-md-inline-flex flex-column">
                     <h4 id="forecast2"></h4>
                     <div id="image2"></div>
                     <p id="forTemp2"></p>
                     <p id="forWind2"></p>
                     <p id="forHumid2"></p>
                 </div>
-                <div class="day col-12 col-md-6 col-lg-2">
+                <div class="day d-md-inline-flex flex-column">
                     <h4 id="forecast3"></h4>
                     <div id="image3"></div>
                     <p id="forTemp3"></p>
                     <p id="forWind3"></p>
                     <p id="forHumid3"></p>
                 </div>
-                <div class="day col-12 col-md-6 col-lg-2">
+                <div class="day d-md-inline-flex flex-column">
                     <h4 id="forecast4"></h4>
                     <div id="image4"></div>
                     <p id="forTemp4"></p>
                     <p id="forWind4"></p>
                     <p id="forHumid4"></p>
                 </div>
-                <div class="day col-12 col-md-6 col-lg-2">
+                <div class="day d-md-inline-flex flex-column">
                     <h4 id="forecast5"></h4>
                     <div id="image5"></div>
                     <p id="forTemp5"></p>
