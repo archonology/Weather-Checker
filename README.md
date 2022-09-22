@@ -1,10 +1,9 @@
-# Weather-Checker
+# Weather-Dashboard
 weekly challenge No.6
 By Reed Meher | U of MN coding Bootcamp 2022
 
 ### Site and Repo
 Deployed Site: https://archonology.github.io/Weather-Dashboard/
-GitHub Repo: https://github.com/archonology/Weather-Dashboard
 
 ## About the Project
 The challenge was to make a site for checking weather around the world. Recent searches needed to be saved to localStorage and displayed in the html, so that users can easily call back past searches to monitor the current and upcoming weather.
