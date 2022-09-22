@@ -1,12 +1,13 @@
 body {
   margin: 0;
   background-color: rgb(25, 110, 155);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 header {
   height: 150px;
   background-color: rgb(33, 52, 59); /* For browsers that do not support gradients */
-  background-image: linear-gradient(to bottom right, rgb(71, 178, 214), rgb(20, 55, 80));
+  background-image: linear-gradient(to top right, rgb(10, 28, 41), rgb(20, 55, 80));
 }
 
 header h1 {
@@ -25,7 +26,7 @@ header h1 {
   border-bottom: 2px solid black;
 }
 
-form h1 {
+form h2 {
   font-size: 42px;
   text-align: left;
   font-weight: bolder;

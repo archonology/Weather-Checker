@@ -286,7 +286,7 @@ function renderSearchHistory() {
                   response.json().then(function (data) {
         
                     //apply data to the current weather card
-                    displayCity.text(data.city.name + "(" + (moment().format("M/DD/YYYY")) + ")");
+                    displayCity.text(data.city.name + " on " + (moment().format("M/DD/YYYY")));
                     temp.text("Current Temp: " + data.list[0].main.temp + " °F");
                     wind.text("Wind: " + data.list[0].wind.speed + " mph");
                     humidity.text("Humidity: " + data.list[0].main.humidity + "%");
@@ -390,7 +390,7 @@ function renderSearchHistory() {
                   response.json().then(function (data) {
         
                     //apply data to the current weather card
-                    displayCity.text(data.city.name + "(" + (moment().format("M/DD/YYYY")) + ")");
+                    displayCity.text(data.city.name + " on " + (moment().format("M/DD/YYYY")));
                     temp.text("Current Temp: " + data.list[0].main.temp + " °F");
                     wind.text("Wind: " + data.list[0].wind.speed + " mph");
                     humidity.text("Humidity: " + data.list[0].main.humidity + "%");
