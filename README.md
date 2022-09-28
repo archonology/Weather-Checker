@@ -1,5 +1,5 @@
 # Weather-Dashboard
-weekly challenge No.6
+A weather tracking website
 By Reed Meher | U of MN coding Bootcamp 2022
 
 ### Site and Repo
