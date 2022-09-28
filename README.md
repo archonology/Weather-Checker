@@ -1,6 +1,5 @@
 # Weather-Dashboard
 A weather tracking website
-By Reed Meher | U of MN coding Bootcamp 2022
 
 ### Site and Repo
 Deployed Site: https://archonology.github.io/Weather-Dashboard/
