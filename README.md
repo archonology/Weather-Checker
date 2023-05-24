@@ -1,6 +1,5 @@
 # Weather-Dashboard
-weekly challenge No.6
-By Reed Meher | U of MN coding Bootcamp 2022
+A weather tracking website
 
 ### Site and Repo
 Deployed Site: https://archonology.github.io/Weather-Dashboard/
